@@ -9,6 +9,28 @@ let weeks = {
     en: [ 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su', ],
 };
 
+//Пятый урок
+let arr = ['12', '24', '42', '60', '48', '55', '44'];
+
+arr.forEach( elem => {
+    if(elem[0] == 2 || elem[0] == 4) {
+        console.log(elem);
+    }
+});
+
+num:
+for(let i = 2; i <= 100; i++) {
+    for(let j = 2; j < i; j++) {
+        if(i % j == 0) {
+            continue num;
+        }
+    }
+    console.log(`Делители этого числа ${i}: 1 и ${i}`);
+}
+
+
+//Конец пятый урок
+
 //Четвертый урок
 function stringWork(text) {
     if(typeof text !== 'string') {
