@@ -9,6 +9,30 @@ let weeks = {
     en: [ 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su', ],
 };
 
+
+//Седьмой урок
+const app = document.querySelector('.app');
+let week = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+week.forEach((elem, index) => {
+    let day = new Date().getDay() - 1;
+    console.log(day);
+    let days;
+    if(index == day) {
+        app.insertAdjacentHTML('beforeend', `
+            <b>${elem}</b></br>
+        `);
+    } else if (index == 5 || index == 6){
+        app.insertAdjacentHTML('beforeend', `
+            <i>${elem}</i></br>
+        `);
+    } else {
+        app.insertAdjacentHTML('beforeend', `
+            ${elem}</br>
+        `);
+    }
+});
+//Конец седьмой урок
+
 //Пятый урок
 let arr = ['12', '24', '42', '60', '48', '55', '44'];
 
@@ -27,8 +51,6 @@ for(let i = 2; i <= 100; i++) {
     }
     console.log(`Делители этого числа ${i}: 1 и ${i}`);
 }
-
-
 //Конец пятый урок
 
 //Четвертый урок
