@@ -13,15 +13,17 @@ let weeks = {
 //Седьмой урок
 const app = document.querySelector('.app');
 let week = ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'];
+
 week.forEach((elem, index) => {
-    let day = new Date().getDay() - 1;
-    console.log(day);
-    let days;
-    if(index == day) {
+    let date = new Date();
+    let optionsDate = { weekday: 'short'};
+    let dayName = new Intl.DateTimeFormat('ru-RU', optionsDate).format(date);
+    console.log(dayName);
+    if(elem.toLowerCase() == dayName) {
         app.insertAdjacentHTML('beforeend', `
-            <b>${elem}</b></br>
+        <b>${elem}</b></br>
         `);
-    } else if (index == 5 || index == 6){
+    } else if (elem.toLowerCase() == 'сб' || elem.toLowerCase() == 'вс'){
         app.insertAdjacentHTML('beforeend', `
             <i>${elem}</i></br>
         `);
