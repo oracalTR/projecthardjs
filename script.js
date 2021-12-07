@@ -25,7 +25,7 @@ let timeStamp = function() {
         let sec = date.toLocaleString('default', { second: 'numeric' });
     
         function zeroForNum(elem) {
-            return elem > 0 && elem < 10 ? '0' + elem : elem;
+            return elem < 10 ? '0' + elem : elem;
         }
         function monthDecl(month) {
             if(month.substring(month.length - 1) == 'т') {
@@ -49,7 +49,7 @@ let timeStamp = function() {
     
         let dateNowA = `a) Сегодня ${dayWeek.toUpperCase().substr(0, 1) + dayWeek.substr(1)}, 
         ${day} ${monthDecl(month)} ${year} года, ${hour} ${declOfHourMinSec(hour, ['час', 'часа', 'часов'])} ${min} ${declOfHourMinSec(min, ['минута', 'минуты', 'минут'])} ${sec} ${declOfHourMinSec(sec, ['секунда', 'секунды', 'секунд'])}`;
-        let dateNowB = `б) ${zeroForNum(day)}.${zeroForNum(monthN)}.${year} - ${zeroForNum(hour)}:${zeroForNum(min)}:${zeroForNum(sec)}`;
+        let dateNowB = `б) ${zeroForNum(day)}.${zeroForNum(monthN)}.${year} - ${hour}:${zeroForNum(min)}:${zeroForNum(sec)}`;
         app.innerHTML = '';
         app.insertAdjacentHTML('beforeend', `<p>${dateNowA}</p>`);
         app.insertAdjacentHTML('beforeend', `<p>${dateNowB}</p>`);
