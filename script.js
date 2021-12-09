@@ -53,7 +53,7 @@ let timeStamp = function() {
         app.innerHTML = '';
         app.insertAdjacentHTML('beforeend', `<p>${dateNowA}</p>`);
         app.insertAdjacentHTML('beforeend', `<p>${dateNowB}</p>`);
-    }, 1000)
+    }, 1000);
 };
 
 timeStamp();
